@@ -50,18 +50,21 @@ ggplot(df, aes(x = DATE, y = value, color = Legend)) +
   
   theme(
     plot.title = element_text(hjust = 0.5, face = "bold", size = 20),
-    plot.subtitle = element_text(hjust = 0.5, size = 10),
+    plot.subtitle = element_text(hjust = 0.5, size = 15),
     plot.title.position = "plot",
     plot.subtitle.position = "plot",
     legend.position = "bottom",
-    legend.title = element_blank()
+    legend.title = element_blank(),
+		legend.text = element_text(size = 12), 
+    axis.title = element_text(size = 14), 
+    axis.text = element_text(size = 12)
   ) +
   
   labs(
     title = "Historical Series Comparison: ECB Key Interest Rates",
     subtitle = "01 January 1999 - 21 December 2025",
     x = "Year",
-    y = "Value (Basis Points)"
+    y = "Value (%)"
   )
 
 
@@ -83,8 +86,8 @@ ggplot() +
   )) +
   scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
   labs(
-    title = "How fastly does the ECB react to changes of inflation?",
-    y = "Value (Basis Points)",
+    title = "How quickly does the ECB react to changes of inflation?",
+    y = "Value (%)",
     x = NULL,
     color = "Key Interest Rates"
   ) +
@@ -162,6 +165,6 @@ ggplot() +
   labs(
     title = "ECB Key Interest Rates: Semestral Analysis",
     x = NULL, 
-    y = "Rate variation (Basis Points)",
+    y = "Rate variation (%)",
     color = "Policy Action"
   )
